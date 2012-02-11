@@ -3,7 +3,7 @@
 <!--
 BBEdit Language Module for CoffeeScript
 
-Put this file in 
+Put this file in
    ~/Library/Application Support/BBEdit/Language Modules
 or equivalent.
 
@@ -93,6 +93,17 @@ Source: https://gist.github.com/1004413
 			(?&gt;	"	(?s: \\. | [^"] )*?		(?: "   )	)	|
 			(?&gt;	'	(?s: \\. | [^'] )*?		(?: '   )	)
 		)</string>
+		<key>Function Pattern</key>
+		<string><![CDATA[(?x:^(?P<leadspace>^\s*)
+		(?P<function>
+			(?P<function_name>[a-zA-z0-9_@]+)
+			\W*=\W*(\(.+\))?
+			(?s:.+?)
+			[\r\n](?P=leadspace)$
+		)
+		)]]>
+		</string>
+
 	</dict>
 </dict>
 </plist>
